@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 철수 369
+      //   const num = Number(prompt("번호 입력"));
+      //   function 삼육구게임() {
+      //     if (num % 1 == 3) {
+      //       console.log("박수");
+      //     } else {
+      //       console.log("통과");
+      //     }
+      //   }
+
+      //   function 삼육구게임(num) {
+      //     if (num % 3 == 0) {
+      //       console.log("박수");
+      //     } else {
+      //       console.log("통과");
+      //     }
+      //   }
+      //   삼육구게임(15);
+      //   삼육구게임(9);
+      //   삼육구게임(14);
+
+      // 369게임 업그레이드 9의 배수에서 박수 두번 치기
+      // else if문을 쓰면 그게 아니면 만약에 라는 뜻이기 때문에
+      // 9의 배수가 아닐때만 else if 뒤의 코드가 실행
+      function 삼육구게임(num) {
+        if (num % 9 == 0) {
+          console.log("박수박수");
+        } else if (num % 3 == 0) {
+          console.log("박수");
+        } else {
+          console.log("통과");
+        }
+      }
+
+      삼육구게임(9);
+
+      // 공인중개사 시험점수를 입력하면 합격인지 알려주는 함수
+      // 두과목 합쳐서 120 이상 합격
+      // 한 과목이 40점 미만이면 불합격
+
+      //   function 합격했냐(x, y) {
+      //     if (x < 40 && y < 40) {
+      //       console.log("불합격");
+      //     } else if (x + y >= 120) {
+      //       console.log("합격");
+      //     }
+      //   }
+
+      //   합격했냐(70, 70);
+      //   합격했냐(30, 100);
+      //   합격했냐(50, 50);
+
+      function 합격했냐(a, b) {
+        if (a < 40 || b < 40) {
+          console.log("불합격");
+        } else if (a + b >= 120) {
+          console.log("합격");
+        } else {
+          console.log("불합격");
+        }
+      }
+
+      합격했냐(70, 70);
+      합격했냐(30, 100);
+      합격했냐(50, 50);
+    </script>
+  </body>
+</html>

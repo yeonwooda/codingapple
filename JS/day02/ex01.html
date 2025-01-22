@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/ex.css" />
+  </head>
+  <body>
+    <div class="black-bg">
+      <div class="white-bg">
+        <h4>로그인하세요</h4>
+
+        <!-- 폼 전송 html -->
+        <form action="success.html">
+          <div class="my-3">
+            <input type="text" class="form-control" id="email" />
+          </div>
+          <div class="my-3">
+            <input type="password" class="form-control" id="pw" />
+          </div>
+          <button type="submit" class="btn btn-primary" id="forwarding">
+            전송
+          </button>
+          <button type="button" class="btn btn-danger" id="close">닫기</button>
+        </form>
+
+        <button class="btn btn-danger" id="close">닫기</button>
+      </div>
+    </div>
+
+    <div class="main-bg">
+      <h4>Shirts on Sale</h4>
+      <button id="login" class="btn btn-danger">로그인</button>
+    </div>
+
+    <script>
+      // 전송 버튼 누르면
+      // 저기 input에 입력한 값이 공백이면 알림창 띄어주세요
+
+      //// 저기 input에 입력한 값
+      // document.getElementById("email").value;
+
+      if (1 == 3) {
+        console.log("맞음");
+      } else if (3 == 3) {
+        console.log("맞음");
+      }
+
+      document
+        .getElementById("forwarding")
+        .addEventListener("click", function (e) {
+          if (document.getElementById("email").value == "") {
+            alert("아이디 입력해주세요");
+            e.preventDefault(); // 폼 전송 막은
+          } else if (document.getElementById("pw").value == "") {
+            alert("비밀번호 입력해주세요");
+            e.preventDefault();
+          } else if (document.getElementById("pw").value.length <= 6) {
+            alert("비밀번호는 6자 이상입니다.");
+            e.preventDefault();
+          }
+        });
+    </script>
+
+    <script>
+      document.getElementById("login").addEventListener("click", function () {
+        document.querySelector(".black-bg").classList.add("show-modal");
+      });
+    </script>
+  </body>
+</html>
