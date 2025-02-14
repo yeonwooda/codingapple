@@ -10,7 +10,7 @@
     />
     <link rel="stylesheet" href="index.css" />
   </head>
-  <body class="dark">
+  <body>
     <div class="black-bg">
       <div class="white-bg">
         <h4>로그인하세요</h4>
@@ -98,6 +98,30 @@
       <h4>Shirts on Sale</h4>
       <button id="login" class="btn btn-danger">로그인</button>
     </div>
+
+    <div class="alert alert-danger">
+      <span id="num">5</span>초 이네 구매시 사은품 증정!
+    </div>
+
+    <script>
+      //   setTimeout(function () {
+      //     document.querySelector(".alert").style.display = "none";
+      //   }, 5000);
+
+      // x초 마다 코드 실행하려면
+      //   setInterval(function () {
+      //     document.querySelector(".alert").style.display = "none";
+      //   }, 5000);
+
+      var count = 5;
+
+      setInterval(function () {
+        count -= 1;
+        if (count >= 0) {
+          document.querySelector("#num").innerHTML = count;
+        }
+      }, 1000);
+    </script>
 
     <script>
       document.getElementById("login").addEventListener("click", function () {
