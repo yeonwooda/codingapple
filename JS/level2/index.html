@@ -92,6 +92,13 @@
     </nav>
 
     <script>
+      // 페이지 스크롤바 100 이상 내리면 로고 폰트 사이즈 줄이기
+
+      window.addEventListener("scroll", function () {
+        window.sxrollTo(0, 100);
+      });
+
+      document.addEventListener("scroll", function () {});
       // badge 홀수 클릭 시 내부 글자를 Light로 변경
 
       // badge 짝수 클릭 시 내부 글자를 Dark로 변경
@@ -121,6 +128,23 @@
       <h4>Shirts on Sale</h4>
       <button id="login" class="btn btn-danger">로그인</button>
     </div>
+
+    <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius eos,
+      ratione neque esse adipisci dolorem nobis ullam? Quaerat alias modi nemo
+      temporibus obcaecati corrupti, officiis nulla ea molestias! Dolorem,
+      porro.
+    </div>
+
+    <script>
+      // div의 스크롤바 내린 양 == div의 실제 높이
+
+      document.querySelector(".lporem").addEventListener("scroll", function () {
+        document.querySelector(".lorem").scrollTop;
+      });
+    </script>
+
+    <div style="height: 1000px"></div>
 
     <div class="alert alert-danger">
       <span id="num">5</span>초 이네 구매시 사은품 증정!
