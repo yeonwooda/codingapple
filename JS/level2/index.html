@@ -31,6 +31,24 @@
     </div>
 
     <script>
+      // 검은배경 누르면 모달창 닫는 기능 만들기
+      document
+        .querySelector(".black-bg")
+        .addEventListener("click", function (e) {
+          // e.target; // 유저가 실제로 누른거
+          // e.currentTarget; // 이벤트 리스너 달린 곳
+          // this;
+          // e.preventDefault(); // 기본 동작 막은거
+          // e.stopPropagation(); // 내 상위요소로 이벤트 버블링 막아줌
+
+          // 내가 실제로 누른게 까만 배경이면 모달창 닫아주세요요
+          if (e.target == document.querySelector(".black-bg")) {
+            document.querySelector(".black-bg").classList.remove("show-modal");
+          }
+
+          // document.querySelector(".black-bg").classList.remove("show-modal");
+        });
+
       // 전송버튼 누르면 저기 input에 입력한 값이 공백이면 알림창 뜨기
 
       document.querySelector("form").addEventListener("submit", function (e) {
@@ -94,6 +112,19 @@
     <script>
       // 페이지 스크롤바 100 이상 내리면 로고 폰트 사이즈 줄이기
 
+      if (window.scrollY > 100) {
+        document.querySelector(".navbar-brand").style.fontSize = "20px";
+      }
+
+      // 스크롤 바 건드릴 때 마다
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 100) {
+          document.querySelectorAll(".navbar-brand").style.fontSize = "20px";
+        } else {
+          document.querySelector(".navbar-brand").style.fontSize = "25px";
+        }
+      });
+
       window.addEventListener("scroll", function () {
         window.sxrollTo(0, 100);
       });
@@ -137,11 +168,21 @@
     </div>
 
     <script>
-      // div의 스크롤바 내린 양 == div의 실제 높이
+      // div의 스크롤바 내린 양 + 눈에 보이는 div 박스 높이 == div의 실제 높이
 
-      document.querySelector(".lporem").addEventListener("scroll", function () {
-        document.querySelector(".lorem").scrollTop;
+      document.querySelector(".lorem").addEventListener("scroll", function () {
+        var 스크롤양 = document.querySelector(".lorem").scrollTop; // 스크롤양
+        var 실제높이 = document.querySelector(".lorem").scrollHeight; // 실제 높이
+        var 높이 = document.querySelector(".lorem").clientHeight; // 높이
+
+        if (스크롤양 + 높이 > 실제높이 - 10) {
+          alert("다읽음음");
+        }
       });
+
+      document.querySelector("html").scrollHeight; // 현재 웹페이지 스크롤양
+      document.querySelector("html").scrollHeight; // 현재 웹페이지 실제높이
+      document.querySelector("html").clientHeight; // 현재 웹페이지 보이는 높이임
     </script>
 
     <div style="height: 1000px"></div>
